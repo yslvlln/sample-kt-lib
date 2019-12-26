@@ -5,9 +5,9 @@
       <configuration version="3" platform="JVM 1.6" allPlatforms="JVM [1.6]" useProjectSettings="false" isTestModule="true" externalProjectId="sample-kt-sharedlib">
         <dependsOnModuleNames>sample-kt-sharedlib_commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>com.yslvlln.gssi.sample-kt-sharedlib.commonTest</sourceSet>
-          <sourceSet>com.yslvlln.gssi.sample-kt-sharedlib.commonMain</sourceSet>
           <sourceSet>com.yslvlln.gssi.sample-kt-sharedlib.jvmMain</sourceSet>
+          <sourceSet>com.yslvlln.gssi.sample-kt-sharedlib.commonMain</sourceSet>
+          <sourceSet>com.yslvlln.gssi.sample-kt-sharedlib.commonTest</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>jvmTest|sample-kt-sharedlib:jvmTest|jvm</externalSystemTestTasks>
