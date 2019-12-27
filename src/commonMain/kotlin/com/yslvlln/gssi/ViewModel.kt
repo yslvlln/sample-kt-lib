@@ -33,4 +33,16 @@ class ViewModel(private val repo: Repository = Repository()) {
             }
         }
     }
+
+    fun startListener(userid: String) {
+        repo.startListener(userid)
+    }
+
+    fun stopListener(userid: String) {
+        repo.stopListener(userid)
+    }
+
+    fun observeLocation(userid: String, lat: Double, lng: Double) {
+        repo.observeLocation(userid, lat, lng)
+    }
 }
