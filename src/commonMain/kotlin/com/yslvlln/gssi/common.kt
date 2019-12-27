@@ -1,3 +1,5 @@
+package com.yslvlln.gssi
+
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlin.native.concurrent.ThreadLocal
 

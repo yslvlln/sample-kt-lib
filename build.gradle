@@ -13,7 +13,7 @@ def GROUP_ID = "com.yslvlln.gssi"
 // The name you gave your package in bintray. In our example it would be:  def ARTIFACT_ID="kotlin-awesome-printer"
 def ARTIFACT_ID = "kotlin-mp-heartbeat"
 // What you named your repository in bintray. In our example it would be "myrepository"
-def BINTRAY_REPOSITORY = "heartbeat-lib-k2"
+def BINTRAY_REPOSITORY = "heartbeat-lib-k"
 //  Your public facing Bintray name. You can see your Bintray name on the top right corner in Bintray. I named it "guide" for our example.
 def BINTRAY_ORGINIZATION = "ycosilvallana"
 // A link to an issue tracker for the library, in our example: "https://github.com/natanfudge/KotlinAwesomePrinter/issues"
@@ -23,7 +23,7 @@ def SITE_URL = "https://github.com/yslvlln/sample-kt-lib"
 // A link to the version control system (where the code is stored). In our example: "https://github.com/natanfudge/KotlinAwesomePrinter.git"
 def VCS_URL = "https://github.com/yslvlln/sample-kt-lib.git"
 // The current version of your library. You will need to update this value whenever you upload a new release. For example: 1.0
-def LIBRARY_VERSION_NAME= 0.1
+def LIBRARY_VERSION_NAME= "0.1.1"
 
 group 'com.yslvlln.gssi'
 version '0.1.0'

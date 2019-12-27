@@ -1,3 +1,7 @@
+@file:JvmName("KtRepository")
+
+package com.yslvlln.gssi
+
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
@@ -9,6 +13,7 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
+import kotlin.jvm.JvmName
 
 class Repository {
 
@@ -65,7 +70,15 @@ class Repository {
                 if (it !in ignore) {
                     val locationRef = result.getObject(it)
                     val heartbeat = Json.parse(Heartbeat.serializer(), locationRef.toString())
-                    onHeartbeatFetchedCallback(Heartbeat(heartbeat.date, heartbeat.lat, heartbeat.lng, heartbeat.time, heartbeat.user))
+                    onHeartbeatFetchedCallback(
+                        Heartbeat(
+                            heartbeat.date,
+                            heartbeat.lat,
+                            heartbeat.lng,
+                            heartbeat.time,
+                            heartbeat.user
+                        )
+                    )
                 }
             }
 

@@ -1,6 +1,12 @@
+@file:JvmName("KtViewModel")
+
+package com.yslvlln.gssi
+
+import com.yslvlln.gssi.Repository
+import com.yslvlln.gssi.mainDispatcher
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-
+import kotlin.jvm.JvmName
 
 class ViewModel(private val repo: Repository = Repository()) {
 
