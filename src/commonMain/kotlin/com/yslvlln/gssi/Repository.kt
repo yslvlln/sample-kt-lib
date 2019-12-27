@@ -36,8 +36,7 @@ class Repository {
         val date: String,
         val lat: Double,
         val lng: Double,
-        val time: String,
-        val user: String)
+        val time: String)
 
     //
     suspend fun generatePushId(): String {
@@ -88,8 +87,7 @@ class Repository {
                             heartbeat.date,
                             heartbeat.lat,
                             heartbeat.lng,
-                            heartbeat.time,
-                            heartbeat.user
+                            heartbeat.time
                         )
                     )
                 }
