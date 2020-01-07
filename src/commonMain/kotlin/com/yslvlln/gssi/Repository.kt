@@ -110,10 +110,12 @@ class Repository {
         return GlobalScope.launch(backgroundDispatcher) {
             val endpoint = baseUrl + "/heartbeat/$userid.json"
             val allLogs = client.get<JsonObject> { url(endpoint) }
-            val lastLog = allLogs.keys.last().toString()
-            client.patch<JsonObject> {
-                url(baseUrl + "/heartbeat/$userid/$lastLog.json")
-                body = "{\"isActive\": false}"
+            if (allLogs != null) {
+                val lastLog = allLogs.keys.last().toString()
+                client.patch<JsonObject> {
+                    url(baseUrl + "/heartbeat/$userid/$lastLog.json")
+                    body = "{\"isActive\": false}"
+                }
             }
         }
     }
