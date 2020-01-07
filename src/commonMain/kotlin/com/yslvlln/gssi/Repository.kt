@@ -36,12 +36,13 @@ class Repository {
         val date: String,
         val lat: Double,
         val lng: Double,
-        val time: String)
+        val time: String
+    )
 
     //
     suspend fun generatePushId(): String {
-        val pushId = client.post<JsonObject>{
-            url ("$baseUrl/test.json")
+        val pushId = client.post<JsonObject> {
+            url("$baseUrl/test.json")
             body = "{ }"
         }
         return pushId.get("name").toString().replace("\"", "")
@@ -75,7 +76,7 @@ class Repository {
     fun observeHeartbeat(userid: String, logid: String, onHeartbeatFetchedCallback: (Heartbeat) -> Unit): Job {
         val endpoint = baseUrl + "/heartbeat/$userid/$logid.json"
         return GlobalScope.launch(backgroundDispatcher) {
-            val result = client.get<JsonObject>{ url(endpoint) }
+            val result = client.get<JsonObject> { url(endpoint) }
             val pushids = result.keys.toList()
             val ignore = listOf("isActive", "startLocation", "endLocation", "startTimestamp", "endTimestamp")
             pushids.forEach {
@@ -109,8 +110,8 @@ class Repository {
     fun stopListener(userid: String): Job {
         return GlobalScope.launch(backgroundDispatcher) {
             val endpoint = baseUrl + "/heartbeat/$userid.json"
-            val allLogs = client.get<JsonObject> { url(endpoint) }
-            if (allLogs != null) {
+            if (endpoint != null) {
+                val allLogs = client.get<JsonObject> { url(endpoint) }
                 val lastLog = allLogs.keys.last().toString()
                 client.patch<JsonObject> {
                     url(baseUrl + "/heartbeat/$userid/$lastLog.json")
